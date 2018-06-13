@@ -1,16 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
+apply from : "config.gradle"
 buildscript {
-    ext {
-        compileSdkVersion = 27
-        minSdkVersion = 19
-        targetSdkVersion = 27
-        versionCode = 1
-        versionName = "1.0"
-        kotlin_version = "1.2.41"
-
-        support_v7 = "27.1.1"
-    }
+    ext.kotlin_version = "1.2.41"
 
     repositories {
         google()

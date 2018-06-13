@@ -1,0 +1,15 @@
+ext {
+    android = [
+            compileSdkVersion: 27,
+            minSdkVersion    : 19,
+            targetSdkVersion : 27,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+    dependencies = [
+            appcompatV7: 'com.android.support:appcompat-v7:27.1.1',
+            design     : 'com.android.support:design:27.1.1',
+            gson       : 'com.google.code.gson:gson:2.8.2'
+    ]
+}

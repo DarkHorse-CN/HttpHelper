@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.darkhorse.httphelper.transformer.RxTransformer
-import com.darkhorse.preferencesmanager.PreferencesHelper
 import com.example.httphelper.bean.BillBean
-import com.example.httphelper.bean.TestBean
 import com.example.httphelper.retrofit.API
 import com.example.httphelper.retrofit.HttpObserver
 

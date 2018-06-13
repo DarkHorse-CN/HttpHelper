@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TransparentDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+        <!-- 背景颜色及透明程度 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 是否没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
 </resources>

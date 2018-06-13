@@ -1,4 +1,4 @@
-package com.darkhorse.httphelper.interceptor
+package com.example.httphelper.interceptor
 
 import java.io.IOException
 import java.util.HashMap
