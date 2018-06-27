@@ -75,9 +75,9 @@ object HttpHelper {
     /**
      * 添加双Token请求机制
      */
-    fun supportDoubleToken(shortTokenKey: String, longTokenKey: String, iDoubleToken: IDoubleToken): HttpHelper {
+    fun supportDoubleToken(iDoubleToken: IDoubleToken): HttpHelper {
         if (mTokenInterceptor == null) {
-            mDoubleTokenInterceptor = DoubleTokenInterceptor(shortTokenKey, longTokenKey, iDoubleToken)
+            mDoubleTokenInterceptor = DoubleTokenInterceptor(iDoubleToken)
         }
         return this
     }

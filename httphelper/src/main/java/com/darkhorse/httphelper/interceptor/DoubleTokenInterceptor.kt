@@ -13,17 +13,17 @@ import java.nio.charset.UnsupportedCharsetException
  * Description:
  * Created by DarkHorse on 2018/5/17.
  */
-class DoubleTokenInterceptor(private var shortTokenKey: String, private var longTokenKey: String, private val iDoubleToken: IDoubleToken) : Interceptor {
+class DoubleTokenInterceptor(private val iDoubleToken: IDoubleToken) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response? {
         val request = chain.request()
-        val headers = request.headers(longTokenKey)
+        val headers = request.headers(iDoubleToken.getLongTokenKey())
         var response: Response;
 
         //判断是否刷新Token的请求
         if (headers.size <= 0) {
             val builder = request.newBuilder()
-            builder.addHeader(shortTokenKey, iDoubleToken.getShortToken())
+            builder.addHeader(iDoubleToken.getShortTokenKey(), iDoubleToken.getShortToken())
             response = chain.proceed(builder.build())
 
             val body = response.body()!!
@@ -54,15 +54,15 @@ class DoubleTokenInterceptor(private var shortTokenKey: String, private var long
                 }
                 val newRequest = chain.request()
                         .newBuilder()
-                        .addHeader(shortTokenKey, iDoubleToken.getShortToken())
+                        .addHeader(iDoubleToken.getShortTokenKey(), iDoubleToken.getShortToken())
                         .build()
 
                 response = chain.proceed(newRequest)
             }
         } else {
             val builder = request.newBuilder()
-            builder.removeHeader(longTokenKey)
-            builder.addHeader(longTokenKey, iDoubleToken.getLongToken())
+            builder.removeHeader(iDoubleToken.getLongTokenKey())
+            builder.addHeader(iDoubleToken.getLongTokenKey(), iDoubleToken.getLongToken())
             response = chain.proceed(builder.build())
         }
         return response

@@ -7,6 +7,10 @@ import okhttp3.Response
  * Created by DarkHorse on 2018/6/13.
  */
 interface IDoubleToken {
+    fun getShortTokenKey(): String
+
+    fun getLongTokenKey(): String
+
     fun getShortToken(): String
 
     fun getLongToken(): String

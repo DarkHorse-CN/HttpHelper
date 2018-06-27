@@ -25,7 +25,15 @@ class BaseApplication : Application() {
         HttpHelper
                 .addBaseUrl(API.SHOP)
                 .supportMulBaseUrl(map)     //实现多BaseUrl的支持
-                .supportDoubleToken(API.SHORT_TOKEN, API.LONG_TOKEN, object : IDoubleToken {
+                .supportDoubleToken( object : IDoubleToken {
+                    override fun getShortTokenKey(): String {
+                        return ""
+                    }
+
+                    override fun getLongTokenKey(): String {
+                        return ""
+                    }
+
                     override fun getShortToken(): String {
                         return ""
                     }
