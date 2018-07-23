@@ -1,6 +1,6 @@
 package com.darkhorse.httphelper.interceptor
 
-import com.darkhorse.httphelper.`interface`.IDoubleToken
+import com.darkhorse.httphelper.minterface.IDoubleToken
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.nio.charset.Charset

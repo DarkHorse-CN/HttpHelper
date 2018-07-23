@@ -1,11 +1,7 @@
-package com.example.httphelper.interceptor
+package com.darkhorse.httphelper.interceptor
 
-import android.app.Activity
 import android.content.Context
 import android.net.ConnectivityManager
-import android.widget.Toast
-import com.darkhorse.httphelper.NetworkUtils.isNetworkAvailable
-import com.darkhorse.httphelper.R
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.lang.ref.WeakReference

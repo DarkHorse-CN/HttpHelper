@@ -1,6 +1,4 @@
-package com.darkhorse.httphelper.`interface`
-
-import okhttp3.Response
+package com.darkhorse.httphelper.minterface
 
 /**
  * Description:

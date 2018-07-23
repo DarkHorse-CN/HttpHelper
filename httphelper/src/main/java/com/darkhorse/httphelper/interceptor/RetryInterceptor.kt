@@ -1,4 +1,4 @@
-package com.example.httphelper.interceptor
+package com.darkhorse.httphelper.interceptor
 
 import com.darkhorse.httphelper.R
 import okhttp3.Interceptor

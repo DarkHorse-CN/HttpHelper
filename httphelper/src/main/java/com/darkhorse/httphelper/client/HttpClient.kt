@@ -1,8 +1,6 @@
 package com.darkhorse.httphelper.client
 
 import android.content.Context
-import com.example.httphelper.interceptor.NetWorkCheckInterceptor
-import com.example.httphelper.interceptor.RetryInterceptor
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken

@@ -1,19 +1,18 @@
 package com.darkhorse.httphelper
 
-import android.annotation.SuppressLint
-import android.app.Dialog
 import android.content.Context
-import com.darkhorse.httphelper.`interface`.IDoubleToken
+import com.darkhorse.httphelper.minterface.IDoubleToken
+import com.darkhorse.httphelper.minterface.ISingleToken
 import com.darkhorse.httphelper.converter.BaseConvert
 import com.darkhorse.httphelper.converter.BaseConverterFactory
 
 import com.darkhorse.httphelper.client.HttpClient
 import com.darkhorse.httphelper.client.RetrofitClient
 import com.darkhorse.httphelper.interceptor.DoubleTokenInterceptor
-import com.example.httphelper.interceptor.MulUrlInterceptor
+import com.darkhorse.httphelper.interceptor.MulUrlInterceptor
 import com.darkhorse.httphelper.interceptor.TokenInterceptor
-import com.example.httphelper.interceptor.NetWorkCheckInterceptor
-import com.example.httphelper.interceptor.RetryInterceptor
+import com.darkhorse.httphelper.interceptor.NetWorkCheckInterceptor
+import com.darkhorse.httphelper.interceptor.RetryInterceptor
 
 import java.util.HashMap
 
@@ -64,9 +63,9 @@ object HttpHelper {
     /**
      * 添加单Token请求机制
      */
-    fun supportSingleToken(tokenName: String, getToken: () -> String): HttpHelper {
+    fun supportSingleToken(iSingleToken: ISingleToken): HttpHelper {
         if (mDoubleTokenInterceptor == null) {
-            mTokenInterceptor = TokenInterceptor(tokenName, getToken)
+            mTokenInterceptor = TokenInterceptor(iSingleToken)
         }
         return this
 

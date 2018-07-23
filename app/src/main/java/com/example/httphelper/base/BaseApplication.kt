@@ -2,8 +2,7 @@ package com.example.httphelper.base
 
 import android.app.Application
 import com.darkhorse.httphelper.HttpHelper
-import com.darkhorse.httphelper.HttpHelper.supportDoubleToken
-import com.darkhorse.httphelper.`interface`.IDoubleToken
+import com.darkhorse.httphelper.minterface.IDoubleToken
 import com.example.httphelper.retrofit.API
 import com.example.httphelper.retrofit.MyConverter
 import okhttp3.logging.HttpLoggingInterceptor
@@ -25,7 +24,7 @@ class BaseApplication : Application() {
         HttpHelper
                 .addBaseUrl(API.SHOP)
                 .supportMulBaseUrl(map)     //实现多BaseUrl的支持
-                .supportDoubleToken( object : IDoubleToken {
+                .supportDoubleToken(object : IDoubleToken {
                     override fun getShortTokenKey(): String {
                         return ""
                     }
@@ -54,16 +53,6 @@ class BaseApplication : Application() {
                 .setConvert(MyConverter())
                 .init()
         initBaseUrl(map)
-    }
-
-    private fun isTokenExpire(data: String): Boolean {
-
-        return true
-    }
-
-    private fun refreshToken(): String {
-
-        return "newToken"
     }
 
     private fun initBaseUrl(map: MutableMap<String, String>) {
